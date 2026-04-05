@@ -1,4 +1,4 @@
-module github.com/katastroma/ekbole
+module github.com/katastroma/akrostolion
 
 go 1.26.1
 
