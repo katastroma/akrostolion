@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package akrostolion;
+
+option go_package = "github.com/katastroma/akrostolion";
+
+// LabelerService stamps Kubernetes manifests with platform labels.
+service LabelerService {
+  rpc Label(stream LabelRequest) returns (stream LabelResponse);
+}
+
+// Kubernetes manifest to label.
+message LabelRequest {
+  bytes manifest = 1;
+}
+
+// Labeled Kubernetes manifest.
+message LabelResponse {
+  bytes manifest = 1;
+}
