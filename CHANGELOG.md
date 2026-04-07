@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.1.2 - 2026-04-07
+#### Bug Fixes
+- enable both client and bidi streaming - (f462b4e) - Nathan Blair
+
+- - -
+
 ## 0.1.1 - 2026-04-05
 #### Bug Fixes
 - go mod - (eae6b1c) - Nathan Blair
