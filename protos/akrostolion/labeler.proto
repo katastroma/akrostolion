@@ -6,7 +6,18 @@ option go_package = "github.com/katastroma/akrostolion";
 
 // LabelerService stamps Kubernetes manifests with platform labels.
 service LabelerService {
-  rpc Label(stream LabelRequest) returns (stream LabelResponse);
+  rpc LabelStream(stream LabelStreamRequest) returns (stream LabelStreamResponse);
+  rpc Label(stream LabelRequest) returns (LabelResponse);
+}
+
+// Kubernetes manifest to label.
+message LabelStreamRequest {
+  bytes manifest = 1;
+}
+
+// Labeled Kubernetes manifest.
+message LabelStreamResponse {
+  bytes manifest = 1;
 }
 
 // Kubernetes manifest to label.
@@ -15,6 +26,4 @@ message LabelRequest {
 }
 
 // Labeled Kubernetes manifest.
-message LabelResponse {
-  bytes manifest = 1;
-}
+message LabelResponse {}
